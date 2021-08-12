@@ -1,3 +1,5 @@
+### Dapp Info
+
 #### Rinkeby Contract Address
 0xE92d124D297D8fFa9eb5d01a384592d9bb7345c5
 
@@ -13,11 +15,17 @@ Symbol: SN
 2.3.0
 
 
-#### Test Images
-Create a Star - ![Create a Star](images/create_a_star.PNG?raw=true "Create a Star")
+### Test Images
+##### Create a Star  
 
-Look up a Star - ![Look up a Star](images/look_up.PNG?raw=true "Look up a Star")
+![Create a Star](images/create_a_star.PNG?raw=true "Create a Star")
 
-Unit tests - ![Unit tests](images/unit_test_results.PNG?raw=true "Unit test results")
+##### Look up a Star 
+
+![Look up a Star](images/look_up.PNG?raw=true "Look up a Star")
+
+##### Unit tests 
+
+![Unit tests](images/unit_test_results.PNG?raw=true "Unit test results")
 
 
