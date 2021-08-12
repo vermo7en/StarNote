@@ -12,7 +12,9 @@ Symbol: SN
 2.3.0
 
 
-
-
+#### Test Images
+Create a Star - ![Create a Star](./images/create_a_star.png)
+Look up a Star - ![Look up a Star](./images/look_up.png)
+Unit tests - ![Unit tests](./images/unit_test_results.png)
 
 

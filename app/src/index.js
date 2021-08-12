@@ -1,5 +1,5 @@
 import Web3 from "web3";
-import StarNote from "../../build/contracts/StarNote.json";
+import StarNoteArtifact from "../../build/contracts/StarNote.json";
 
 const App = {
   web3: null,
@@ -10,14 +10,14 @@ const App = {
     const { web3 } = this;
 
     try {
-      // get contract instance
+      // Get contract instance
       const networkId = await web3.eth.net.getId();
-      const deployedNetwork = StarNote.networks[networkId];
+      const deployedNetwork = StarNoteArtifact.networks[networkId];
       this.meta = new web3.eth.Contract(
-        StarNote.abi,
+        StarNoteArtifact.abi,
         deployedNetwork.address,
       );
-      // get accounts
+      // Get accounts
       const accounts = await web3.eth.getAccounts();
       this.account = accounts[0];
     } catch (error) {
@@ -41,12 +41,12 @@ const App = {
 
   lookUp: async function (){
     const { lookUpTokenIdToStarInfo } = this.meta.methods;
-    const id = document.getElementById("lookid").value;
+    const id = document.getElementById("lookId").value;
     const name = await lookUpTokenIdToStarInfo(id).call();
-    if (star === "") {
+    if (name === "") {
       App.setStatus("Star with id " + id + " is not known.");
     } else {
-      App.setStatus("Star name is " + star + ".");
+      App.setStatus("Star name is " + name + ".");
     }
   }
 };
@@ -55,11 +55,11 @@ window.App = App;
 
 window.addEventListener("load", async function() {
   if (window.ethereum) {
-    // use MetaMask's provider
+    // Use MetaMask provider
     App.web3 = new Web3(window.ethereum);
-    await window.ethereum.enable(); // get permission to access accounts
+    await window.ethereum.enable(); // Permission to access accounts
   } else {
-    // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+    // Fallback
     App.web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:9545"),);
   }
 

@@ -55,23 +55,19 @@ contract StarNote is ERC721 {
         }
     }
 
-    //lookUpTokenIdToStarInfo
-    function lookUpTokenIdToStarInfo(uint256 _tokenId)
-        public
-        view
-        returns (string memory)
+    // lookUpTokenIdToStarInfo
+    function lookUpTokenIdToStarInfo(uint256 _tokenId) public view returns (string memory)
     {
-        //You should return the Star saved in tokenIdToStarInfo mapping
+        // Return the Star saved in tokenIdToStarInfo mapping
         Star memory star = tokenIdToStarInfo[_tokenId];
         return star.name;
     }
 
-    //Exchange Stars function
+    // Exchange Stars function
     function exchangeStars(uint256 _tokenId1, uint256 _tokenId2) public {
-        //Passing to star tokenId check if the owner of _tokenId1 or _tokenId2 is the sender
-        //don't have to check for the price of the token (star)
-        //Get owner of the two tokens (ownerOf(_tokenId1), ownerOf(_tokenId1)
-        //Use _transferFrom function to exchange the tokens.
+        // Passing to star tokenId check if the owner of _tokenId1 or _tokenId2 is the sender
+        // Get owner of the two tokens (ownerOf(_tokenId1), ownerOf(_tokenId1)
+        // Use _transferFrom function to exchange the tokens.
         address owner1 = ownerOf(_tokenId1);
         address owner2 = ownerOf(_tokenId2);
         require(msg.sender == owner1 || msg.sender == owner2, "must own either token");
@@ -85,11 +81,11 @@ contract StarNote is ERC721 {
         
     }
 
-    //Transfer Stars
+    // Transfer Stars
     function transferStar(address _to1, uint256 _tokenId) public {
-        //Check if sender is the ownerOf(_tokenId)
+        // Check if sender is the ownerOf(_tokenId)
         require(msg.sender == ownerOf(_tokenId), "cannot transfer unowned token");
-        //Use transferFrom(from, to, tokenId); function to transfer the Star
+        // Use transferFrom(from, to, tokenId); function to transfer the Star
         _transferFrom(msg.sender, _to1, _tokenId);
     }
 }
