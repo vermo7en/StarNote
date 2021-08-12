@@ -13,8 +13,8 @@ Symbol: SN
 
 
 #### Test Images
-Create a Star - ![Create a Star](./images/create_a_star.png)
-Look up a Star - ![Look up a Star](./images/look_up.png)
-Unit tests - ![Unit tests](./images/unit_test_results.png)
+Create a Star - ![Create a Star](images/create_a_star.PNG?raw=true "Create a Star")
+Look up a Star - ![Look up a Star](images/look_up.PNG?raw=true "Look up a Star")
+Unit tests - ![Unit tests](images/unit_test_results.PNG?raw=true "Unit test results")
 
 
