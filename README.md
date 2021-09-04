@@ -1,6 +1,6 @@
 # StarNote
 
-StarNote is a project for Udacity's Blockchain Developer Nanodegree. It is a star registry dapp. This is my submission.
+StarNote is a project for Udacity's Blockchain Engineer Nanodegree. It is a star registry dapp.
 
 ## Project Feedback
 
